@@ -14,20 +14,18 @@ All incoming data is validated and errors are displayed.
 
 -
 
-Authorization ![Authorization]
+Authorization ![auth](https://github.com/Leksizz/sibers-test-task/assets/129582133/1bc786f3-a044-4d6b-8efb-5a8505f25989)
 
-- Creating new
-  users ![Creating new users]
+- CRUD  ![CRUD](https://github.com/Leksizz/sibers-test-task/assets/129582133/a0d2e84f-75b8-4aaf-80b0-90f982244f22)
 
-- Editing
-  users ![Editing users]
+- Errors ![errors](https://github.com/Leksizz/sibers-test-task/assets/129582133/66b938a9-b547-4cc7-82fc-277be137d678)
 
 </details>
 
 ## Receiving
 
 Clone the repository into your server directory:
-```https://github.com/Leksizz/test-task.git```
+```https://github.com/Leksizz/sibers-test-task.git```
 Configure the host so that the root folder is ```public```
 
 ## Installing dependencies
