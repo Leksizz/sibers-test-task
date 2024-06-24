@@ -6,7 +6,7 @@ use App\Core\Session\Session;
 
 readonly class Auth
 {
-    // Класс для работы с авторизацией
+    // The class for working with Authorization
     public function __construct(
         private Session $session,
     )

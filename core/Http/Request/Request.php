@@ -4,7 +4,7 @@ namespace App\Core\Http\Request;
 
 use App\Core\Validator\Validator;
 
-// Класс для работы с запросами
+// The class for working with requests
 
 class Request
 {

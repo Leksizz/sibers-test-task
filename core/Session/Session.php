@@ -2,7 +2,7 @@
 
 namespace App\Core\Session;
 
-// Класс для работы с сессией пользователя
+// The class for working with user's session
 class Session
 {
     public function __construct()

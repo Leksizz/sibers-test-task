@@ -6,7 +6,7 @@ use App\Core\Controller\Controller;
 use App\Src\Services\UserService;
 use JetBrains\PhpStorm\NoReturn;
 
-// Контроллер для работы с пользователями
+// The controller for working with users
 
 class UserController extends Controller
 {

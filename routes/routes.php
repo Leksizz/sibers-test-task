@@ -3,14 +3,13 @@
 use App\Core\Router\Route;
 use App\Src\Controllers\AuthController;
 use App\Src\Controllers\MainController;
-use App\Src\Controllers\PhoneController;
 use App\Src\Middlewares\Auth;
 use App\Src\Middlewares\Guest;
 use App\Src\Middlewares\Admin;
 use App\Src\Controllers\AdminController;
 use App\Src\Controllers\UserController;
 
-// Маршруты в приложении
+// Routes in Application
 
 return [
     Route::get('/', [MainController::class, 'index']),
@@ -24,6 +23,6 @@ return [
     Route::get('/admin/edit/\d+', [AdminController::class, 'edit'], [Admin::class]),
     Route::post('/admin/update/\d+', [AdminController::class, 'update'], [Admin::class]),
     Route::get('/user/\d+', [UserController::class, 'user'], [Admin::class]),
-    Route::get('/phones/\d+', [PhoneController::class, 'phones'], [Admin::class]),
     Route::post('/admin/delete/\d+', [AdminController::class, 'delete'], [Admin::class]),
+    Route::get('/admin/show/\d+', [AdminController::class, 'show'], [Admin::class]),
 ];

@@ -4,7 +4,7 @@ namespace App\Core\DataBase;
 
 use PDO;
 
-// Класс для работы с базой данных
+// The class for working with database
 class DataBase
 {
     private PDO $pdo;

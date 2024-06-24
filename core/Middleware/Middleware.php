@@ -6,7 +6,7 @@ use App\Core\Auth\Auth;
 use App\Core\Http\Redirect\Redirect;
 use App\Core\Http\Request\Request;
 
-// Базовый мидлвар для перенаправления пользователя
+// The basic middleware for filtering requests
 
 abstract class Middleware
 {

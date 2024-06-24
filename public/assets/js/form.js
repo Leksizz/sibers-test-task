@@ -12,13 +12,14 @@ $(document).ready(function () {
             cache: false,
             processData: false,
             success: function (result) {
-                json = jQuery.parseJSON(result);
-                if (json.status === 'error') {
-                    document.getElementById('error').innerText = json.message
-                }
-                if (json.href) {
-                    window.location.href = '/' + json.href;
-                }
+                console.log(result)
+                // json = jQuery.parseJSON(result);
+                // if (json.status === 'error') {
+                //     document.getElementById('error').innerText = json.message
+                // }
+                // if (json.href) {
+                //     window.location.href = '/' + json.href;
+                // }
             },
         });
     });

@@ -12,7 +12,7 @@ use App\Core\View\View;
 use Exception;
 use JetBrains\PhpStorm\NoReturn;
 
-// Базовый класс Контроллера с необходимыми классами
+// The basic controller with necessary services
 abstract class Controller
 {
     private View $view;

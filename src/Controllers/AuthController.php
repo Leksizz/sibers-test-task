@@ -7,7 +7,7 @@ use App\Src\Services\AuthService;
 use Exception;
 use JetBrains\PhpStorm\NoReturn;
 
-// Контроллер для работы с авторизацией
+// The controller for working with authorization
 
 class AuthController extends Controller
 {
@@ -17,7 +17,7 @@ class AuthController extends Controller
 
     public function index(): void
     {
-        $this->view('auth/index', 'Вход');
+        $this->view('auth/index', 'Login');
     }
 
     #[NoReturn] public function login(): void
@@ -25,9 +25,11 @@ class AuthController extends Controller
         $authService = new AuthService($this->db(), $this->session());
 
         if (!$this->request()->validate()) {
-            if (!$authService->attempt($this->request()->all())) {
-                $this->response()->json('error', 'Неверный логин или пароль');
-            }
+            $this->response()->json('error', $this->request()->errors());
+        }
+
+        if (!$authService->attempt($this->request()->all())) {
+            $this->response()->json('error', 'Invalid login or password');
         }
 
         $this->response()->redirect('admin/index/1');

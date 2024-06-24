@@ -23,11 +23,11 @@ class User extends Model
         ]);
     }
 
-    public function getByEmail(string $email): ?array
+    public function getByLogin(string $login): ?array
     {
         return $this->db->selectOne([
             'table' => $this->table(),
-            'where' => ['email' => $email],
+            'where' => ['login' => $login],
         ]);
     }
 
@@ -56,7 +56,7 @@ class User extends Model
         ]);
     }
 
-    // Метод для получения кол-ва пользователей
+    // The method for receiving count of users in the database
     public function getCountUsers(): int
     {
         return $this->db->countColumn([

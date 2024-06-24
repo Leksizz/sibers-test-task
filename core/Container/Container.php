@@ -12,7 +12,7 @@ use App\Core\Session\Session;
 use App\Core\Validator\Validator;
 use App\Core\View\View;
 
-// Сервис-контейнер для внедрения в контроллеры основных классов
+// The service container for dependency injection
 readonly class Container
 {
     public Request $request;

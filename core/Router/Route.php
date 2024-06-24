@@ -2,8 +2,7 @@
 
 namespace App\Core\Router;
 
-// Класс для определения маршрутов
-
+// The class for defining routes
 class Route
 {
     public function __construct(

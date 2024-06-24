@@ -12,7 +12,7 @@ use App\Core\Session\Session;
 use App\Core\View\View;
 use JetBrains\PhpStorm\NoReturn;
 
-// Класс маршрутизатор для обработки полученных маршрутов
+// The router class for processing the received routes
 
 class Router
 {

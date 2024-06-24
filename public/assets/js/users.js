@@ -20,30 +20,18 @@ $(document).ready(async function () {
         row.append(`<td>${users[i].id}</td>`);
         row.append(`<td>${users[i].name}</td>`);
         row.append(`<td>${users[i].lastname}</td>`);
-        row.append(`<td>${users[i].email}</td>`);
-        row.append(`<td>${users[i].company}</td>`);
-        row.append(`<td>${users[i].position}</td>`);
-
-        const phonesResponse = await $.ajax({
-            url: '/phones/' + users[i].id,
-            method: 'GET',
-            dataType: 'json'
-        });
-
-        const phones = phonesResponse.message;
-        if (phones === 'Нет') {
-            row.append(`<td>${phones}</td>`);
-        } else {
-            for (let i = 0; i < phones.length; i++) {
-                row.append(`<td>${phones[i][0].number}</td>`);
-            }
-        }
-        row.append(`<td> <div class="buttons-container">
-        <a href="/admin/edit/${users[i].id}" type="button" class="btn btn-sm btn-success">Редактировать</a>
-        </div> </td>`);
-        row.append(`<td><form action="/admin/delete/${users[i].id}" method="post">
-            <input type="submit" value="Удалить" class="btn btn-sm btn-danger">
-        </form> </td>`);
+        row.append(`<td>${users[i].login}</td>`);
+        row.append(`<td>${users[i].gender}</td>`);
+        row.append(`<td>${users[i].birthdate}</td>`);
+        row.append(`<td>
+                        <div class="buttons-container">
+        <a href="/admin/show/${users[i].id}" type="button" class="btn btn-sm btn-primary">Watch</a>
+        <a href="/admin/edit/${users[i].id}" type="button" class="btn btn-sm btn-success">Edit</a>
+        <form action="/admin/delete/${users[i].id}" method="post">
+        <input type="submit" value="Delete" class="btn btn-sm btn-danger">
+    </form>
+    </div>
+                    </td>`);
         tableBody.append(row);
     }
 

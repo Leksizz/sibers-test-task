@@ -2,7 +2,7 @@
 
 namespace App\Core\Validator;
 
-// Класс валидации, который проверяет корректность введенных данных
+// The class for checking the correctness of data
 class Validator
 {
     private array $errors = [];
@@ -33,22 +33,20 @@ class Validator
         $patterns = [
             'name' => "/^[a-zA-Z]+$/",
             'lastname' => "/[a-zA-Z]+$/",
-            'email' => "/(\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,6})/",
-            'company' => "/^(?:[a-zA-Z]+|Нет)$/",
-            'position' => "/^(?:[a-zA-Z]+|Нет)$/",
+            'login' => "/[a-zA-Z]+$/",
+            'gender' => "/^(male)|(female).*$/",
+            'birthdate' => "/(\d{4})-(\d{1,2})-(\d{1,2})/",
             'password' => '/((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15})/',
-            'phone' => '/^(8[0-9]{10}|Нет)$/'
         ];
 
         $errors = [
-            'name' => "Поле имя может содержать только буквы",
-            'lastname' => "Поле фамилия может содержать только буквы",
-            'email' => "Неверный формат электронной почты",
-            'company' => "Поле компания может содержать только буквы",
-            'position' => "Поле должность может содержать только буквы",
-            'password' => "Пароль: от 8-15 символов, с минимум одной цифрой, одной заглавной и
-                одной строчной буквой.",
-            'phone' => "Неверный формат телефона"
+            'name' => "The name field must contain only Latin letters",
+            'lastname' => "The lastname field must contain only Latin letters",
+            'login' => "The login field must contain only Latin letters",
+            'gender' => "The gender field must contain only male or female",
+            'birthdate' => "The birthdate must be in the format year-month-day",
+            'password' => "The password must be between 8-15 characters, with at least one digit, one uppercase and
+    one lowercase letter.",
         ];
         if (preg_match($patterns[$key], $value)) {
             return false;

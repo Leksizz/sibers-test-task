@@ -3,7 +3,8 @@
 namespace App\Core\Http\Redirect;
 
 use JetBrains\PhpStorm\NoReturn;
-// Класс для редиректов
+
+// The class for redirects
 class Redirect
 {
     #[NoReturn] public function to(string $url): void

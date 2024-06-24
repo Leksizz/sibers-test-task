@@ -4,7 +4,7 @@ namespace App\Core\Http\Response;
 
 use JetBrains\PhpStorm\NoReturn;
 
-// Класс для отправки json-ответов
+// The class for sending json
 
 class Response
 {

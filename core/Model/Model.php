@@ -4,7 +4,7 @@ namespace App\Core\Model;
 
 use App\Core\DataBase\DataBase;
 
-// Базовый класс модели
+// The basic model
 
 abstract class Model
 {

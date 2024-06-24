@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: MySQL-8.2
--- Время создания: Июн 22 2024 г., 22:04
+-- Время создания: Июн 24 2024 г., 17:17
 -- Версия сервера: 8.2.0
 -- Версия PHP: 8.2.18
 
@@ -24,58 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `phones`
---
-
-CREATE TABLE `phones` (
-  `id` int NOT NULL,
-  `number` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Дамп данных таблицы `phones`
---
-
-INSERT INTO `phones` (`id`, `number`) VALUES
-(162, '89136667788'),
-(163, '89137789812'),
-(164, '89137002030'),
-(165, '89137342031'),
-(166, '89137789812'),
-(167, '89136667788'),
-(168, '89876543311'),
-(169, '80003334455'),
-(170, '89996660011'),
-(171, '81112229988'),
-(172, '88099988776'),
-(173, '89996660011'),
-(174, '89996660011'),
-(175, '89137342031'),
-(176, '89996660011'),
-(177, '89137789812'),
-(178, '89996660011'),
-(179, '89137789812'),
-(180, '89137789812'),
-(181, '89996660011'),
-(182, '89137342031'),
-(183, '89137789812'),
-(184, '85556665566'),
-(185, '89996660011'),
-(186, '89137789812'),
-(187, '89996660011'),
-(188, '89137789812'),
-(189, '89137342031'),
-(190, '89137342031'),
-(191, '89996660011'),
-(192, '89137789812'),
-(193, '83334445500'),
-(194, '87779990011'),
-(195, '88888888888'),
-(196, '89990001166');
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `users`
 --
 
@@ -83,9 +31,9 @@ CREATE TABLE `users` (
   `id` int NOT NULL,
   `name` varchar(55) NOT NULL,
   `lastname` varchar(55) NOT NULL,
-  `email` varchar(55) NOT NULL,
-  `company` varchar(55) DEFAULT NULL,
-  `position` varchar(55) DEFAULT NULL,
+  `login` varchar(55) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `gender` varchar(55) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `birthdate` varchar(55) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `role` varchar(55) NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -94,92 +42,32 @@ CREATE TABLE `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `lastname`, `email`, `company`, `position`, `password`, `role`) VALUES
-(2, 'Иван', 'Иванов', 'admin@admin.ru', 'AdminCompany', 'Администратор', 'admin123', 'admin'),
-(50, 'Alexey', 'Ivanov', 'example@example.ru', 'Example', 'Exampe', '$2y$10$wj4pCARo/YJS/6aW4H1sousIj5vgsscVYQJFO6ITaI22LJnIxAzkW', 'user'),
-(54, 'Petr', 'Olegov', 'oleg@olegg.ru', 'Нет', 'Нет', '$2y$10$T1FgPCAOLcI/l8HUW7MKzecAAZbMaiOTxgWGEUSqDToLzQqnLrDa.', 'user'),
-(55, 'Evgeniy', 'Potapov', 'potapov@mail.ru', 'Potap', 'Teacher', '$2y$10$XFUvpp.AR/CiUSALYSE4buElyHXX8Luj7VPJSBKNPMIPThgFF110S', 'user'),
-(56, 'Dmitriy', 'Lokot', 'lokot@lokot.ru', 'Нет', 'Нет', '$2y$10$QoLJVQiir0Q3YwhRVgGUouzi9XqSmbAND8U6mcSGT1celWuK1OD/u', 'user'),
-(57, 'Ostap', 'Ostapov', 'mail@poc.ru', 'Mail', 'Нет', '$2y$10$dtviBXnzq6hT7z8Dt5buL.5xa7tF7juzkiamc2EPvdR7OtSXs8Qsm', 'user'),
-(58, 'Mariya', 'Smirnova', 'smirnova@smirnova.ru', 'Smirnova', 'Director', '$2y$10$adaAh6xuJx5Jn.skVH179erOFGKanbDY57YZoC91tZwbsBZHRnJKG', 'user'),
-(59, 'Timur', 'Gorlov', 'gorl@lok.ru', 'Roke', 'Developer', '$2y$10$M0Hwkfj9DNY2YJtWjheENegNuhUy4iRoqLd73.shiCoqzbrWucNQ6', 'user'),
-(60, 'Panfil', 'Sergeev', 'sergeev@sergey.ru', 'Нет', 'Нет', '$2y$10$ThZquwQuEQdCBKYHBe76KuxncTBMsgIxGWvTUkQx47xYsY6M9iaOO', 'user'),
-(61, 'Nikita', 'Notov', 'notov@mail.ru', 'Mail', 'Driver', '$2y$10$I/4eJPpqB98EjjPk5cBTbOwiUDE6ThWOmMfcqjJVQbFd3ErhzYPgq', 'user'),
-(62, 'Anastasiya', 'Barskaya', 'bar@rui.ru', 'Нет', 'Нет', '$2y$10$DBu7ubtyZeWlq0MeHY7PhuyN3p1X02Bcdwuj9tOBTu.7iltqVqTCK', 'user'),
-(63, 'Dariya', 'Novoselova', 'lodse@mail.ru', 'Нет', 'Нет', '$2y$10$ezsfDcL5LFwJkoF73PLbuezjCo5XkC23uEaA6kGo1GcfizvDtqIpu', 'user'),
-(64, 'Denis', 'Denisov', 'denis@denis.denis', 'Denis', 'Denis', '$2y$10$zL9NhG72DzpWfQfk7VIlV.hpc2dtso4Jjj/ummJZ/5/zpilGlHkvS', 'user'),
-(65, 'Anna', 'Parubova', 'lot@lot.ru', 'Super', 'Owner', '$2y$10$PHybOsecsdxI.n829x1UoeNlalsHrlQsTyHQsCKc6mgJ0SpASKBEu', 'user'),
-(66, 'Inna', 'Leip', 'leiber@lok.ru', 'Mail', 'Doctor', '$2y$10$7OwZ9LuJubye2MmcpsVekeiGhVxvu2ZSl9OG/YMyfg5Txa3ba1EfS', 'user'),
-(67, 'Arsen', 'Bromov', 'brom@mor.ru', 'Нет', 'Нет', '$2y$10$UrJhPi812ApE3R59DMa5Hemv8lxR3ing7qTDLLiN47WSDah8VbmWe', 'user'),
-(68, 'Alexey', 'Boylov', 'boylov@das.ru', 'Example', 'Example', '$2y$10$9lChhvUrnkWof3Dj18X4cOw989dnKP95euxDQPpoQWblT0/EoA5N.', 'user'),
-(69, 'John', 'Rybakov', 'rybak@fish.ru', 'Fish', 'hr', '$2y$10$mTppLCUs3J/MTAHVXt686.qIaFd.6DehVt4IfXWKHWsyIgmes.zM.', 'user'),
-(70, 'Kirill', 'Sollv', 'solvd@solvde.ru', 'Shop', 'Director', '$2y$10$G9KCGSEp4T/yLzPzxdlMw.HrWnW6uAWrGSAAmO1Vw8O2rWJIN8zZi', 'user'),
-(71, 'Lev', 'Tigrov', 'tigrov@tigrov.ru', 'Zoo', 'Security', '$2y$10$Lmhzsoxa.miDExf64OpUw.7LkSSgfsIaMgYxPz64caUTz7OTH8j0W', 'user'),
-(72, 'Matvey', 'Nikitov', 'nikitov@nikitov.ru', 'Example', 'Designer', '$2y$10$.G.vYpt9Rnq/me2Z3guviO31D8KQHe817BtTrr8UJ1.vcJE7BP0HG', 'user'),
-(73, 'Alexey', 'Ivanov', 'example@examplemail.ru', 'Example', 'Example', '$2y$10$D0dVS6XgqlsBka57y5Z86.T9MrgEugQEqQSyrCODIgmwMHFfqs/SW', 'user');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `user_phone`
---
-
-CREATE TABLE `user_phone` (
-  `id` int NOT NULL,
-  `user_id` int NOT NULL,
-  `phone_id` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Дамп данных таблицы `user_phone`
---
-
-INSERT INTO `user_phone` (`id`, `user_id`, `phone_id`) VALUES
-(134, 50, 162),
-(135, 50, 163),
-(136, 50, 164),
-(137, 54, 165),
-(138, 55, 166),
-(139, 55, 167),
-(140, 55, 168),
-(141, 58, 169),
-(142, 58, 170),
-(143, 58, 171),
-(144, 59, 172),
-(145, 59, 173),
-(146, 60, 174),
-(147, 61, 175),
-(148, 63, 176),
-(149, 63, 177),
-(150, 64, 178),
-(151, 64, 179),
-(152, 65, 180),
-(153, 65, 181),
-(154, 65, 182),
-(155, 66, 183),
-(156, 66, 184),
-(157, 66, 185),
-(158, 68, 186),
-(159, 69, 187),
-(160, 69, 188),
-(161, 69, 189),
-(162, 70, 190),
-(163, 70, 191),
-(164, 70, 192),
-(165, 71, 193),
-(166, 72, 194),
-(167, 72, 195),
-(168, 73, 196);
+INSERT INTO `users` (`id`, `name`, `lastname`, `login`, `gender`, `birthdate`, `password`, `role`) VALUES
+(77, 'Admin', 'Admin', 'Admin', 'male', '2024-06-23', '$2y$10$6tuc4vhpC5a/rOKGTz/hzusTpRbXIVbwFJZVVKCNGHq7CaSW/8E06', 'admin'),
+(78, 'Matvey', 'Evgeniev', 'Matveev', 'male', '2024-05-29', '$2y$10$p.jhLhri9FxWQ9kz76CovOeClREordYFCPlQ6U3W1HtjXt8y9U0v2', 'user'),
+(79, 'Anna', 'Ivanova', 'Beaty', 'female', '2024-06-20', '$2y$10$UrDZwiiWRMVTXJik0ZzvIe25TPl5cPj/f0r38emfG6NXtt4CjQ8tq', 'user'),
+(80, 'Irina', 'Smirnova', 'Lili', 'female', '2024-05-17', '$2y$10$4N7.uYlSkbYyw88hsTdZLuLFsFGoKFrH3dYKjyYv9QxruBWnw4j3O', 'user'),
+(81, 'Olga', 'Voronova', 'Bear', 'female', '2024-06-27', '$2y$10$vQeqeieKS66q9SXQJyg0TuquoATwcf3Pd7BnscgVDOLtjEXg/FmcO', 'user'),
+(82, 'Elena', 'Nekrasova', 'Bird', 'female', '2024-05-16', '$2y$10$92xic3UM4YLYp7GBXYvrh.H0mHbbvJH3re2xFSmAGoYxYlIqNupIS', 'user'),
+(83, 'Dmitriy', 'Mobov', 'Cat', 'male', '2024-05-03', '$2y$10$1pDNo9EKdJJX39jn3YThw.y55GWkIFy94WB28kq4W8hy/s7u.Mdde', 'user'),
+(84, 'Pavel', 'Dmitriev', 'Octopus', 'male', '2024-06-08', '$2y$10$CgMDKPf8g.hFqKtBLpY/HeoBnZwY11H0jRj0Cz1O2hmqAI8TERTN6', 'user'),
+(85, 'Oleg', 'Novov', 'Crocodile', 'male', '2024-05-30', '$2y$10$dJ4yYcHQ5Q.F9mH4WHBeZezTiBHCwZgXl3bHwKrBQgg0bZqYUl0US', 'user'),
+(86, 'John', 'Brown', 'Green', NULL, '2024-05-30', '$2y$10$baLsUzXiosKBviAgK6oRDOrA1JLQIwqx8nnzn8Wa6JTR3.WDNOis.', 'user'),
+(87, 'Sergey', 'Morozov', 'Blue', 'male', '2024-06-02', '$2y$10$1b7QTzweIgqQTV3qZ.ruhOnSuBG5lZIt2mzqUK6Ez0QTmdj33Dwza', 'user'),
+(88, 'Inna', 'Vladimirova', 'Yellow', 'female', '2024-06-09', '$2y$10$X5cCMYK85hzU3yvOKhgb5ucaszSUpwvl4WzHiAG2IwiJwRxo6Qcea', 'user'),
+(89, 'Svetlana', 'Skolova', 'Red', 'female', '2020-06-11', '$2y$10$AoaXyKzfUzhAs2qvRrw4C.u.G8uKaqw6vrQi5vr.GMj6AG664AYV.', 'user'),
+(90, 'Aleksandr', 'Boylov', 'Bor', 'male', '2024-06-21', '$2y$10$XE6eX6/6vLqFUx9nr69T4eKXPMJ30wuNCf2yJKCD6gOg.PatAHVhO', 'user'),
+(91, 'Kirill', 'Starov', 'Kimber', 'male', '2024-05-31', '$2y$10$7VkYJAIYvsslR8WtF0Ex7.N9xkwMIzM6TwHYt3j8P4Ww.rJyQlbEu', 'user'),
+(92, 'Lev', 'Tigrov', 'Ligr', 'male', '2024-05-24', '$2y$10$bGZDeGlgcsjaHDW3iwuu2O6kcTquHPFU/pmHhBhmS1MiFf7krTjS2', 'user'),
+(93, 'Jim', 'Milton', 'Jimble', 'male', '2024-06-22', '$2y$10$C.V0sYRC96UiAYDE0W6Mr.UajFzf0uqfiMtp5F4cqqTXEyLvvGDTS', 'user'),
+(94, 'TImur', 'Novgorodov', 'Moscow', 'male', '2024-06-06', '$2y$10$OVKBnDpFwneqA45a2KUqPea9dCJJacVJQ4qEQ9JPMTrug1t7..5HK', 'user'),
+(95, 'Arsen', 'Zhdanov', 'Novosibirsk', 'female', '2024-05-27', '$2y$10$vi83BPSqp8WSX6S34n/YT.dT1BvwOQDJ5E2mV3.3a8GFJ9ndeyPAa', 'user'),
+(96, 'Galina', 'Karpova', 'Tree', 'female', '2024-06-20', '$2y$10$huz3Jr8aL77rMZAmffs6jOtdpLhBfQuLkQDMlRjITsMnn3xR70PcG', 'user'),
+(97, 'Andrey', 'Ivanov', 'Andr', 'male', '2024-06-13', '$2y$10$jWOsEXSkx/umg.W6For/E.L7l1YeAq8C.LL0zyLXLPof548NjpYeu', 'user');
 
 --
 -- Индексы сохранённых таблиц
 --
-
---
--- Индексы таблицы `phones`
---
-ALTER TABLE `phones`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `users`
@@ -188,45 +76,14 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `user_phone`
---
-ALTER TABLE `user_phone`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_phone_ibfk_2` (`user_id`),
-  ADD KEY `user_phone_ibfk_1` (`phone_id`);
-
---
 -- AUTO_INCREMENT для сохранённых таблиц
 --
-
---
--- AUTO_INCREMENT для таблицы `phones`
---
-ALTER TABLE `phones`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=197;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
-
---
--- AUTO_INCREMENT для таблицы `user_phone`
---
-ALTER TABLE `user_phone`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
-
---
--- Ограничения внешнего ключа сохраненных таблиц
---
-
---
--- Ограничения внешнего ключа таблицы `user_phone`
---
-ALTER TABLE `user_phone`
-  ADD CONSTRAINT `user_phone_ibfk_1` FOREIGN KEY (`phone_id`) REFERENCES `phones` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
-  ADD CONSTRAINT `user_phone_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

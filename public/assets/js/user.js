@@ -7,10 +7,9 @@ $(document).ready(async function () {
         dataType: 'json'
     });
     const user = response.message;
-
-    document.getElementById('name').setAttribute('value', user.name);
-    document.getElementById('lastname').setAttribute('value', user.lastname);
-    document.getElementById('email').setAttribute('value', user.email);
-    document.getElementById('company').setAttribute('value', user.company);
-    document.getElementById('position').setAttribute('value', user.position);
+    document.getElementById('login').innerText = user.login
+    document.getElementById('name').innerText = user.name
+    document.getElementById('lastname').innerText = user.lastname
+    document.getElementById('gender').innerText = user.gender
+    document.getElementById('birthdate').innerText = user.birthdate
 });

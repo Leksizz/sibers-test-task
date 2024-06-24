@@ -15,7 +15,7 @@ class UserService
         $this->user = new User($db);
     }
 
-    // Получение 10 пользователь со смещением (пагинация)
+    // The receiving 10 users for pagination
     public function getUsers(int $page): array
     {
         $limit = 10;

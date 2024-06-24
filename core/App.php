@@ -4,7 +4,7 @@ namespace App\Core;
 
 use App\Core\Container\Container;
 
-// Класс для запуска приложения
+// Class for launching the application
 
 class App
 {

@@ -5,7 +5,7 @@ namespace App\Core\View;
 use Exception;
 use JetBrains\PhpStorm\NoReturn;
 
-// Класс для работы с представлениями
+// The class for working with views
 
 class View
 {

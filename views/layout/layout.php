@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title><?= $GLOBALS['title'] ?></title>
+    <link rel="stylesheet" href="/assets/css/admin.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -20,7 +21,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-dark bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">Тестовое задание</a>
+        <a class="navbar-brand" href="/">Test task</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,13 +32,13 @@
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                 </ul>
-                <?php if ($_SESSION['user']['role'] === 'admin'): ?>
+                <?php if ($_SESSION['user']['role'] === 'admin'):?>
                     <li class="nav-item">
-                        <a href="/admin/index/1" class="btn btn-secondary align-self-center">Админ</a>
+                        <a href="/admin/index/1" class="btn btn-secondary align-self-center">Admin</a>
                     </li>
                 <?php endif; ?>
                 <li class="nav-item">
-                    <a href="/logout" class="btn btn-danger align-self-center">Выход</a>
+                    <a href="/logout" class="btn btn-danger align-self-center">Logout</a>
                 </li>
             </div>
         <?php } ?>

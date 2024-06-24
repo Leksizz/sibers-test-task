@@ -22,15 +22,15 @@ class AuthService
 
     public function attempt(array $data): bool
     {
-        $user = $this->user->getByEmail($data['email']);
+        $user = $this->user->getByLogin($data['login']);
 
         if (!$user) {
             return false;
         }
 
-        if (!password_verify($data['password'], password_hash($user['password'], PASSWORD_BCRYPT))) {
+        if (!password_verify($data['password'], $user['password'])) {
             return false;
-        }
+    }
 
         $this->session->set('user', $user);
 

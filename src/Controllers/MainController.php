@@ -12,6 +12,6 @@ class MainController extends Controller
      */
     public function index(): void
     {
-        $this->view('welcome', 'Тестовое задание');
+        $this->view('welcome', 'Test task');
     }
 }

@@ -1,38 +1,44 @@
-# Описание
+# Description
 
-В тестовом задании реализован интерфейс администратора для выполнения CRUD операций c аккаунтами. Помимо этого, имеется
-авторизация, не допускающая сторонних людей к интерфейсу администратора. В задании использовались: HTML, PHP, JS,
-Bootstrap, jQuery. Приложение выполнено в MVC архитектуре, для получения и отправки данных использовались AJAX запросы.
-Все входящие данные валидируются и выводятся ошибки.
+The test task implements an administrator interface for performing CRUD operations with accounts. In addition to this,
+there is
+authorization that prevents third parties from accessing the administrator interface. The task used: HTML, CSS, PHP, JS,
+Bootstrap, jQuery. The application was implemented in MVC architecture; AJAX requests were used to receive and send
+data.
+All incoming data is validated and errors are displayed.
 
-## Обзор
+## Preview
 
 <details>
-  <summary>Обзор текущего наполнения</summary>
-  
-- Авторизация ![Авторизация]![auth](https://github.com/Leksizz/test-task/assets/129582133/e09f7548-e229-4b5f-b105-347a117287d1)
+  <summary>Preview current content</summary>
 
-- Добавление новых пользователей ![Добавление новых пользователей]![main](https://github.com/Leksizz/test-task/assets/129582133/eb0dc2b7-b72b-454d-998a-53feb9a42308)
+-
 
-- Обновление пользователей ![Обновление пользователей]![update](https://github.com/Leksizz/test-task/assets/129582133/e6abc48d-c4bc-414f-88e9-9ccfc6302ce0)
+Authorization ![Authorization]
+
+- Creating new
+  users ![Creating new users]
+
+- Editing
+  users ![Editing users]
 
 </details>
 
-## Получение
+## Receiving
 
-Склонируйте репозиторий в вашу директорию с сервером:
+Clone the repository into your server directory:
 ```https://github.com/Leksizz/test-task.git```
-Настройте хост так, чтобы корневой была папка ```public```
+Configure the host so that the root folder is ```public```
 
-## Установка зависимостей
+## Installing dependencies
 
-Открыв из папки проекта консоль, выполнить команду для установки необходимых зависимостей:
+Open the console from the project folder and run the command to install the necessary dependencies:
 ```composer update```
 
-## Конфигурация базы данных
+## Database configuration
 
-За конфигурацию бд отвечает файл, ```database.php```, находящийся в папке ```config```:
-Выполните настройки подключения в соответствии с вашей бд:
+The file ```database.php```, located in the ```config``` folder, is responsible for the database configuration:
+Configure the connection settings according to your database:
 
 ```
 const DB_DRIVER = 'mysql';
@@ -42,5 +48,13 @@ const DB_USERNAME = 'root';
 const DB_PASSWORD = '';
 const DB_CHARSET = 'utf8';
 ```
-## Схема базы данных
-Представлена в файле: ```test-task.sql```
+
+## Database Schema
+
+Presented in the file: ```test-task.sql```
+
+##   
+
+To log in as an administrator, enter:
+login: Admin
+password: Admin123

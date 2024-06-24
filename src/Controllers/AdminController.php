@@ -8,7 +8,7 @@ use Exception;
 use JetBrains\PhpStorm\NoReturn;
 use Random\RandomException;
 
-// Основной контроллер для работы в админской части
+// The controller for working with admin interface
 
 class AdminController extends Controller
 {
@@ -17,7 +17,15 @@ class AdminController extends Controller
      */
     public function index(): void
     {
-        $this->view('admin/index', 'Пользователи');
+        $this->view('admin/index', 'Users');
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function show(): void
+    {
+        $this->view('admin/show', 'User');
     }
 
     /**
@@ -25,12 +33,9 @@ class AdminController extends Controller
      */
     public function create(): void
     {
-        $this->view('admin/create', 'Добавление пользователя');
+        $this->view('admin/create', 'Creating a new user');
     }
 
-    /**
-     * @throws RandomException
-     */
     #[NoReturn] public function store(): void
     {
         if (!$this->request()->validate()) {
@@ -45,7 +50,7 @@ class AdminController extends Controller
      */
     public function edit(): void
     {
-        $this->view('admin/edit', 'Редактирование пользователя');
+        $this->view('admin/edit', 'Editing a user');
     }
 
     #[NoReturn] public function update(): void
